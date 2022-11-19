@@ -1,25 +1,58 @@
 package org.mdeveloperz.coffeebeen.android.screens.registration
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
+import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.gray
 import org.mdeveloperz.coffeebeen.android.green
 
 @Composable
 fun UserNameScreen() {
-    var firstName by remember { mutableStateOf(TextFieldValue("")) }
-    var lastName by remember { mutableStateOf(TextFieldValue("")) }
+    var firstName by remember {
+        mutableStateOf(
+            TextInputFieldValue(
+                data = TextFieldValue(""),
+                errorMessage = "",
+                label = "First Name",
+                placeHolder = "John"
+            )
+        )
+    }
+
+    var lastName by remember {
+        mutableStateOf(
+            TextInputFieldValue(
+                data = TextFieldValue(""),
+                errorMessage = "",
+                label = "Last Name",
+                placeHolder = "Doe"
+            )
+        )
+    }
+
+    fun handleSubmitUserNames() {
+        val isFirstNameValid = firstName.data.text.isNotEmpty()
+        val isLastNameValid = lastName.data.text.isNotEmpty()
+        firstName = firstName.copy(
+            errorMessage = if (isFirstNameValid) "" else "Required"
+        )
+        lastName = lastName.copy(
+            errorMessage = if (isLastNameValid) "" else "Required"
+        )
+
+        if (!isLastNameValid && !isFirstNameValid) {
+            println("Submit form")
+        }
+    }
 
     Scaffold(
         topBar = { TopToolbar() {} }
@@ -43,28 +76,29 @@ fun UserNameScreen() {
             }
 
             TextInputField(
-                text = firstName,
-                placeHolder = "John",
-                label = "First Name"
+                value = firstName
             ) {
-                firstName = it
+                firstName = firstName.copy(
+                    data = it
+                )
             }
 
             Spacer(modifier = Modifier.height(15.dp))
 
             TextInputField(
-                text = lastName,
-                placeHolder = "Doe",
-                label = "Last Name"
+                value = lastName
             ) {
-                lastName = it
+                lastName = lastName.copy(
+                    data = it
+                )
             }
 
             Spacer(modifier = Modifier.weight(weight = 5F, fill = true))
 
             Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier.fillMaxWidth()
+                onClick = ::handleSubmitUserNames,
+                modifier = Modifier
+                    .fillMaxWidth()
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = green,
