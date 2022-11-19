@@ -1,58 +1,59 @@
 package org.mdeveloperz.coffeebeen.android.screens.registration
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
-import org.mdeveloperz.coffeebeen.android.gray
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
-fun UserNameScreen() {
-    var firstName by remember {
+fun UserEmailCaptureScreen() {
+    var emailAddress by remember {
         mutableStateOf(
             TextInputFieldValue(
                 data = TextFieldValue(""),
                 errorMessage = "",
-                label = "First Name",
-                placeHolder = "John"
+                label = "Email Address",
+                placeHolder = "someone@example.com"
             )
         )
     }
 
-    var lastName by remember {
+    var username by remember {
         mutableStateOf(
             TextInputFieldValue(
                 data = TextFieldValue(""),
                 errorMessage = "",
-                label = "Last Name",
-                placeHolder = "Doe"
+                label = "User Name",
+                placeHolder = "someone"
             )
         )
     }
 
     fun handleSubmitUserNames() {
-        val isFirstNameValid = firstName.data.text.isNotEmpty()
-        val isLastNameValid = lastName.data.text.isNotEmpty()
-        firstName = firstName.copy(
-            errorMessage = if (isFirstNameValid) "" else "Required"
-        )
-        lastName = lastName.copy(
-            errorMessage = if (isLastNameValid) "" else "Required"
-        )
-
-        if (!isLastNameValid && !isFirstNameValid) {
-            println("Submit form")
-        }
+//        val isFirstNameValid = emailAddress.data.text.isNotEmpty()
+//        val isLastNameValid = username.data.text.isNotEmpty()
+//        emailAddress = emailAddress.copy(
+//            errorMessage = if (isFirstNameValid) "" else "Required"
+//        )
+//        username = username.copy(
+//            errorMessage = if (isLastNameValid) "" else "Required"
+//        )
+//
+//        if (!isLastNameValid && !isFirstNameValid) {
+//            println("Submit form")
+//        }
     }
 
     Scaffold(
@@ -66,9 +67,9 @@ fun UserNameScreen() {
             RegistrationHeader()
 
             TextInputField(
-                value = firstName
+                value = username
             ) {
-                firstName = firstName.copy(
+                username = username.copy(
                     data = it
                 )
             }
@@ -76,9 +77,9 @@ fun UserNameScreen() {
             Spacer(modifier = Modifier.height(15.dp))
 
             TextInputField(
-                value = lastName
+                value = emailAddress
             ) {
-                lastName = lastName.copy(
+                emailAddress = emailAddress.copy(
                     data = it
                 )
             }
@@ -95,7 +96,7 @@ fun UserNameScreen() {
                     contentColor = Color.White
                 )
             ) {
-                Text(text = "Input Account")
+                Text(text = "Validate")
             }
 
             Spacer(modifier = Modifier.weight(weight = 1F, fill = true))
@@ -105,6 +106,6 @@ fun UserNameScreen() {
 
 @Preview
 @Composable
-fun UserNameScreenPreview() {
-    UserNameScreen()
+fun UserEmailCaptureScreenPreview() {
+    UserEmailCaptureScreen()
 }
