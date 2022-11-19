@@ -15,9 +15,8 @@ kotlin {
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
         ios.deploymentTarget = "14.1"
-        podfile = project.file("../../CoffeeBeenIOS/Podfile")
         framework {
-            baseName = "CommonDomain"
+            baseName = "common-datasource"
         }
     }
     
@@ -25,7 +24,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(project(":mobile-common:common-domain"))
-                implementation(project(":mobile-common:common-datasource"))
             }
         }
         val commonTest by getting {
@@ -57,7 +55,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.mdeveloperz.mobile.common.container"
+    namespace = "org.mdeveloperz.common.datasource"
     compileSdk = 32
     defaultConfig {
         minSdk = 23
