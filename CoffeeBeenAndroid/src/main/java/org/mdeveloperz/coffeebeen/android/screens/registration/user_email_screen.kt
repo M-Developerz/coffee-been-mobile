@@ -11,6 +11,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
@@ -18,7 +20,9 @@ import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
-fun UserEmailCaptureScreen() {
+fun UserEmailCaptureScreen(
+    navigationController: NavHostController = rememberNavController()
+) {
     var emailAddress by remember {
         mutableStateOf(
             TextInputFieldValue(
@@ -64,7 +68,7 @@ fun UserEmailCaptureScreen() {
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input Your Email")
+            RegistrationHeader(message = "Input Your Email", navController = navigationController)
 
             TextInputField(
                 value = username

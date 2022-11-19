@@ -7,11 +7,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
-fun VerificationCodeScreen() {
+fun VerificationCodeScreen(
+    navigationController: NavHostController = rememberNavController()
+) {
     Scaffold(
         topBar = { TopToolbar() {} }
     ) { contentPadding ->
@@ -20,7 +24,7 @@ fun VerificationCodeScreen() {
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input OTP Verification")
+            RegistrationHeader(message = "Input OTP Verification", navController = navigationController)
         }
     }
 }

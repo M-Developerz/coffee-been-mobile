@@ -9,15 +9,24 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.gray
 import org.mdeveloperz.coffeebeen.android.green
+import org.mdeveloperz.coffeebeen.android.navigation.Screen
+import org.mdeveloperz.coffeebeen.android.presentation.UserAccountCreationViewModel
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
-fun UserNameScreen() {
+fun UserNameScreen(
+    navController: NavHostController,
+    viewModel: UserAccountCreationViewModel = hiltViewModel()
+) {
     var firstName by remember {
         mutableStateOf(
             TextInputFieldValue(
@@ -41,18 +50,19 @@ fun UserNameScreen() {
     }
 
     fun handleSubmitUserNames() {
-        val isFirstNameValid = firstName.data.text.isNotEmpty()
-        val isLastNameValid = lastName.data.text.isNotEmpty()
-        firstName = firstName.copy(
-            errorMessage = if (isFirstNameValid) "" else "Required"
-        )
-        lastName = lastName.copy(
-            errorMessage = if (isLastNameValid) "" else "Required"
-        )
-
-        if (!isLastNameValid && !isFirstNameValid) {
-            println("Submit form")
-        }
+        navController.navigate(Screen.CaptureEmailScreen.name)
+//        val isFirstNameValid = firstName.data.text.isNotEmpty()
+//        val isLastNameValid = lastName.data.text.isNotEmpty()
+//        firstName = firstName.copy(
+//            errorMessage = if (isFirstNameValid) "" else "Required"
+//        )
+//        lastName = lastName.copy(
+//            errorMessage = if (isLastNameValid) "" else "Required"
+//        )
+//
+//        if (!isLastNameValid && !isFirstNameValid) {
+//            println("Submit form")
+//        }
     }
 
     Scaffold(
@@ -63,7 +73,7 @@ fun UserNameScreen() {
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input Your Name")
+            RegistrationHeader(message = "Input Your Name", navController = navController)
 
             TextInputField(
                 value = firstName
@@ -106,5 +116,5 @@ fun UserNameScreen() {
 @Preview
 @Composable
 fun UserNameScreenPreview() {
-    UserNameScreen()
+    UserNameScreen(navController = rememberNavController())
 }

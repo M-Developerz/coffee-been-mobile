@@ -11,12 +11,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.*
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
-fun UserPasswordScreen() {
+fun UserPasswordScreen(
+    navigationController: NavHostController = rememberNavController()
+) {
     var password by remember {
         mutableStateOf(
             TextInputFieldValue(
@@ -50,7 +54,7 @@ fun UserPasswordScreen() {
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input Your Password")
+            RegistrationHeader(message = "Input Your Password", navController = navigationController)
 
             PasswordInputField(
                 value = password
