@@ -17,3 +17,5 @@ rootProject.name = "CoffeeBeen"
 include(":CoffeeBeenAndroid")
 include(":shared")
 include(":android-presentation")
+include(":mobile-common:common-domain")
+include(":mobile-common:common-container")

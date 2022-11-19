@@ -1,16 +1,16 @@
 PODS:
-  - shared (1.0)
+  - CommonDomain (1.0)
 
 DEPENDENCIES:
-  - shared (from `../shared`)
+  - CommonDomain (from `../mobile-common/common-container`)
 
 EXTERNAL SOURCES:
-  shared:
-    :path: "../shared"
+  CommonDomain:
+    :path: "../mobile-common/common-container"
 
 SPEC CHECKSUMS:
-  shared: 07cac7993e4f05eda6b76f3a213b070947c3b79f
+  CommonDomain: 056d7a2ad547dfed16acf339adc53bcd8352b4ec
 
-PODFILE CHECKSUM: 0696b7ab165fbc0ba6e3e1d8e89a9a022cd99602
+PODFILE CHECKSUM: 8d6724d4d6e4091171233a55db41b76fa049a099
 
 COCOAPODS: 1.11.3
