@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "CoffeeBeen"
 include(":CoffeeBeenAndroid")
 include(":shared")
+include(":android-presentation")
