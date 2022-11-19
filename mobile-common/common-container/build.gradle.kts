@@ -22,10 +22,18 @@ kotlin {
     }
     
     sourceSets {
+        val ktorVersion = "2.1.3"
+
         val commonMain by getting {
             dependencies {
                 implementation(project(":mobile-common:common-domain"))
                 implementation(project(":mobile-common:common-datasource"))
+                implementation(project(":mobile-common:remote-datasource"))
+
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.3")
+                implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
         val commonTest by getting {
@@ -52,6 +60,10 @@ kotlin {
             iosX64Test.dependsOn(this)
             iosArm64Test.dependsOn(this)
             iosSimulatorArm64Test.dependsOn(this)
+
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:$ktorVersion")
+            }
         }
     }
 }
