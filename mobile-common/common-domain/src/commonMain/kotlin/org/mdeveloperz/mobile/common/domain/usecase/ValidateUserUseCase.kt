@@ -8,6 +8,7 @@ import org.mdeveloperz.mobile.common.domain.repository.UserAuthenticationReposit
 class ValidateUserUseCase(
     private val userAuthenticationRepository: UserAuthenticationRepository
 ) : BaseUseCase<UserValidationModel, UserValidationResult>() {
+
     override suspend fun execute(request: UserValidationModel) = userAuthenticationRepository
         .validateUser(request)
 }

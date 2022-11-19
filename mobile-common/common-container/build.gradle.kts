@@ -26,14 +26,16 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
-                implementation(project(":mobile-common:common-domain"))
-                implementation(project(":mobile-common:common-datasource"))
-                implementation(project(":mobile-common:remote-datasource"))
-
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.3")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+                implementation("io.ktor:ktor-client-logging:$ktorVersion")
+                implementation("io.github.aakira:napier:2.6.1")
+
+                implementation(project(":mobile-common:common-domain"))
+                implementation(project(":mobile-common:common-datasource"))
+                implementation(project(":mobile-common:remote-datasource"))
             }
         }
         val commonTest by getting {
@@ -51,6 +53,10 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation("io.ktor:ktor-client-ios:$ktorVersion")
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -60,10 +66,6 @@ kotlin {
             iosX64Test.dependsOn(this)
             iosArm64Test.dependsOn(this)
             iosSimulatorArm64Test.dependsOn(this)
-
-            dependencies {
-                implementation("io.ktor:ktor-client-darwin:$ktorVersion")
-            }
         }
     }
 }

@@ -1,7 +1,9 @@
 package org.mdeveloperz.mobile.common.container.di
 
+import io.github.aakira.napier.Napier
 import io.ktor.client.*
 import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.plugins.logging.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 import org.mdeveloperz.common.datasource.datasource.RemoteDataSource
@@ -14,6 +16,18 @@ import org.mdeveloperz.mobile.remote.datasource.service.UserAuthenticationServic
 
 internal object RemoteDataModule {
     private val client = HttpClient() {
+        install(Logging) {
+            logger = object: Logger {
+                override fun log(message: String) {
+                    Napier.v("HTTP Client", null, message)
+                }
+            }
+            level = LogLevel.BODY
+            filter { request ->
+                request.url.host.contains("ktor.io")
+            }
+        }
+
         install(ContentNegotiation) {
             json(Json {
                 prettyPrint = true
