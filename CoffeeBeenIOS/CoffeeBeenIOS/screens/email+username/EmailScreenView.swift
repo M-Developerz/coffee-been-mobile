@@ -9,11 +9,22 @@
 import SwiftUI
 
 struct EmailScreenView: View {
+    @ObservedObject var viewModel = EmailScreenViewModel()
+    
     @State private var username: String = ""
     @State private var email: String = ""
     
     private func handleSubmitUsernameAndEmail() {
-        
+        if username.isEmpty && email.isEmpty {
+            print("Invalid Email and Password")
+            return
+        }
+        let user = UserValidationModel(username: username, email: email)
+        viewModel.validateUser(user: user)
+    }
+    
+    var isEmailAndUsernameValid: Bool {
+        return viewModel.validationResult?.isSuccess ?? false
     }
     
     var body: some View {
@@ -35,6 +46,9 @@ struct EmailScreenView: View {
             ).padding(.top, 20)
             
             Spacer()
+            
+            Text("Email And Password Are Valid")
+                .modifier(HiddenIfModifier(condition: !isEmailAndUsernameValid))
             
             Button(action: handleSubmitUsernameAndEmail) {
                 HStack (alignment: .center) {

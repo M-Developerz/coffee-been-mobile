@@ -22,7 +22,11 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(project(":mobile-common:common-domain"))
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))

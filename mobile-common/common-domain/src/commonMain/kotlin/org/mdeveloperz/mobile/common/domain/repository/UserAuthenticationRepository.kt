@@ -6,5 +6,5 @@ import org.mdeveloperz.mobile.common.domain.model.UserValidationResult
 
 interface UserAuthenticationRepository {
     suspend fun validateUser(user: UserValidationModel): UserValidationResult
-    suspend fun createUserAccount(userModel: UserModel): UserModel
+    suspend fun createUserAccount(user: UserModel): UserModel
 }
