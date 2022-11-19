@@ -50,7 +50,7 @@ fun UserPasswordScreen() {
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader()
+            RegistrationHeader(message = "Input Your Password")
 
             PasswordInputField(
                 value = password

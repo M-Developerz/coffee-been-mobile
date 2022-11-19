@@ -10,14 +10,14 @@ import androidx.compose.ui.unit.sp
 import org.mdeveloperz.coffeebeen.android.gray
 
 @Composable
-fun RegistrationHeader() {
+fun RegistrationHeader(message: String) {
     Column(modifier = Modifier.padding(bottom = 30.dp)) {
         Text(
             text = "Create New Account", modifier = Modifier,
             fontSize = 26.sp,
         )
         Text(
-            text = "Input Your Name",
+            text = message,
             fontSize = 16.sp,
             color = gray,
             modifier = Modifier.padding(top = 12.dp)
