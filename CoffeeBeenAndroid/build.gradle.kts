@@ -46,6 +46,20 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
+    val ktorVersion = "2.1.3"
+
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.3")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-client-logging:$ktorVersion")
+    implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
+
+    implementation("io.github.aakira:napier:2.6.1")
+
+    implementation(project(":mobile-common:common-domain"))
+    implementation(project(":mobile-common:common-datasource"))
+    implementation(project(":mobile-common:remote-datasource"))
     implementation(project(":android-presentation"))
 
 }

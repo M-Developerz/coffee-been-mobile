@@ -36,10 +36,14 @@ android {
 }
 
 dependencies {
+    val ktorVersion = "2.1.3"
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha03")
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    implementation(project(":mobile-common:common-domain"))
 }
 
 kapt {
