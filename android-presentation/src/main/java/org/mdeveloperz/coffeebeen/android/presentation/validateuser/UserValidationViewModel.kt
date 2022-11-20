@@ -1,4 +1,4 @@
-package org.mdeveloperz.coffeebeen.android.presentation.viewmodel
+package org.mdeveloperz.coffeebeen.android.presentation.validateuser
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.mdeveloperz.coffeebeen.android.presentation.bases.BaseViewModel

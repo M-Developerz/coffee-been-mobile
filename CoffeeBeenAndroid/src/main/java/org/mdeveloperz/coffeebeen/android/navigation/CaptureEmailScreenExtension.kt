@@ -1,6 +1,6 @@
 package org.mdeveloperz.coffeebeen.android.navigation
 
-fun Screen.CaptureEmailScreen.makeName(
+fun makeUserEmailCaptureScreenArgument(
     firstName: String,
     lastName: String
 ) = "capture_email/${firstName}/${lastName}"

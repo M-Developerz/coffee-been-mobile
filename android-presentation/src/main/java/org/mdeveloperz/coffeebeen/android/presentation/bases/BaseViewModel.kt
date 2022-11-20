@@ -28,14 +28,16 @@ abstract class BaseViewModel<VIEW_STATE: ViewState>: ViewModel() {
         input: REQUEST,
         useCase: BaseUseCase<REQUEST, RESULT>,
         onResult: (RESULT) -> Unit,
-        onError: (Exception) -> Unit
+        onError: ((Exception) -> Unit)? = null
     ) {
         viewModelScope.launch {
             try {
                 val response = useCase.execute(input)
                 onResult(response)
             } catch (exception: Exception) {
-                onError(exception)
+                if (onError != null) {
+                    onError(exception)
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
 package org.mdeveloperz.coffeebeen.android.navigation
 
 
-fun Screen.CapturePasswordScreen.makeName(
+fun makeCapturePasswordScreenArgument(
     firstName: String,
     lastName: String,
     username: String,

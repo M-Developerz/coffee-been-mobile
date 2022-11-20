@@ -1,4 +1,4 @@
-package org.mdeveloperz.coffeebeen.android.presentation.viewmodel
+package org.mdeveloperz.coffeebeen.android.presentation.validateuser
 
 import org.mdeveloperz.coffeebeen.android.presentation.bases.LoadingState
 import org.mdeveloperz.coffeebeen.android.presentation.bases.LoadingState.IDL

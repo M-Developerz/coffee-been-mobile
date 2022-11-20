@@ -17,12 +17,13 @@ import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.navigation.Screen
-import org.mdeveloperz.coffeebeen.android.navigation.makeName
+import org.mdeveloperz.coffeebeen.android.navigation.makeCapturePasswordScreenArgument
+import org.mdeveloperz.coffeebeen.android.navigation.makeUserEmailCaptureScreenArgument
 import org.mdeveloperz.coffeebeen.android.presentation.model.UserValidationPresentationModel
-import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.EMPTY_STATE
-import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.UserValidationViewModel
-import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.UserValidationViewState
-import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.isLoading
+import org.mdeveloperz.coffeebeen.android.presentation.validateuser.EMPTY_STATE
+import org.mdeveloperz.coffeebeen.android.presentation.validateuser.UserValidationViewModel
+import org.mdeveloperz.coffeebeen.android.presentation.validateuser.UserValidationViewState
+import org.mdeveloperz.coffeebeen.android.presentation.validateuser.isLoading
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 data class UserEmailCaptureScreenArguments(
@@ -62,7 +63,7 @@ fun UserEmailCaptureScreen(
         )
     }
 
-    fun handleSubmitUserNames() {
+    fun handleSubmitUsernameAndEmail() {
         val isFirstNameValid = emailAddress.data.text.isNotEmpty()
         val isLastNameValid = username.data.text.isNotEmpty()
         emailAddress = emailAddress.copy(
@@ -81,7 +82,7 @@ fun UserEmailCaptureScreen(
             )
 
             navigationController.navigate(
-                Screen.CapturePasswordScreen.makeName(
+                makeCapturePasswordScreenArgument(
                     firstName = arguments.firstName,
                     lastName = arguments.lastName,
                     email = emailAddress.data.text,
@@ -131,7 +132,7 @@ fun UserEmailCaptureScreen(
             }
 
             Button(
-                onClick = ::handleSubmitUserNames,
+                onClick = ::handleSubmitUsernameAndEmail,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 50.dp)

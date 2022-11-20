@@ -15,7 +15,7 @@ import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.navigation.Screen
-import org.mdeveloperz.coffeebeen.android.navigation.makeName
+import org.mdeveloperz.coffeebeen.android.navigation.makeUserEmailCaptureScreenArgument
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
@@ -57,7 +57,7 @@ fun UserNameScreen(
 
         if (isLastNameValid && isFirstNameValid) {
             navController.navigate(
-                Screen.CaptureEmailScreen.makeName(
+                makeUserEmailCaptureScreenArgument(
                     firstName = firstName.data.text,
                     lastName = lastName.data.text
                 )
