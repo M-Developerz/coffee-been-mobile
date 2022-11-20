@@ -17,9 +17,19 @@ import org.mdeveloperz.coffeebeen.android.components.*
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
+data class UserPasswordScreenArgument(
+    val firstName: String,
+    val lastName: String,
+    val username: String,
+    val email: String
+)
+
+private val EMPTY_ARGUMENT = UserPasswordScreenArgument("", "", "", "")
+
 @Composable
 fun UserPasswordScreen(
-    navigationController: NavHostController = rememberNavController()
+    navigationController: NavHostController = rememberNavController(),
+    argument: UserPasswordScreenArgument = EMPTY_ARGUMENT
 ) {
     var password by remember {
         mutableStateOf(

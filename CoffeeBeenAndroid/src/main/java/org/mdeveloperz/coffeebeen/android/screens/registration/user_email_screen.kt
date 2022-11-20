@@ -1,11 +1,9 @@
 package org.mdeveloperz.coffeebeen.android.screens.registration
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
@@ -18,16 +16,27 @@ import org.mdeveloperz.coffeebeen.android.components.TextInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.green
+import org.mdeveloperz.coffeebeen.android.navigation.Screen
+import org.mdeveloperz.coffeebeen.android.navigation.makeName
 import org.mdeveloperz.coffeebeen.android.presentation.model.UserValidationPresentationModel
 import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.EMPTY_STATE
 import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.UserValidationViewModel
 import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.UserValidationViewState
+import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.isLoading
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
+
+data class UserEmailCaptureScreenArguments(
+    val firstName: String,
+    val lastName: String
+)
+
+private val EMPTY_ARGUMENT = UserEmailCaptureScreenArguments("", "")
 
 @Composable
 fun UserEmailCaptureScreen(
     navigationController: NavHostController = rememberNavController(),
-    viewModel: UserValidationViewModel = hiltViewModel()
+    viewModel: UserValidationViewModel = hiltViewModel(),
+    arguments: UserEmailCaptureScreenArguments = EMPTY_ARGUMENT
 ) {
     val viewState: State<UserValidationViewState> = viewModel.viewState.collectAsState(EMPTY_STATE)
 
@@ -70,6 +79,15 @@ fun UserEmailCaptureScreen(
                     email = emailAddress.data.text
                 )
             )
+
+            navigationController.navigate(
+                Screen.CapturePasswordScreen.makeName(
+                    firstName = arguments.firstName,
+                    lastName = arguments.lastName,
+                    email = emailAddress.data.text,
+                    username = username.data.text
+                )
+            )
         }
     }
 
@@ -103,18 +121,26 @@ fun UserEmailCaptureScreen(
 
             Spacer(modifier = Modifier.weight(weight = 5F, fill = true))
 
-            Text(text = "${viewState.value.loadingState}")
-            Text(text = "${viewState.value.data}")
+            if (viewState.value.isLoading) {
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .height(40.dp)
+                        .width(40.dp)
+                        .align(Alignment.CenterHorizontally)
+                )
+            }
 
             Button(
                 onClick = ::handleSubmitUserNames,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(top = 50.dp)
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = green,
                     contentColor = Color.White
-                )
+                ),
+                enabled = !viewState.value.isLoading
             ) {
                 Text(text = "Validate")
             }

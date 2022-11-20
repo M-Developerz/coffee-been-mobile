@@ -15,6 +15,7 @@ import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.navigation.Screen
+import org.mdeveloperz.coffeebeen.android.navigation.makeName
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
@@ -45,18 +46,23 @@ fun UserNameScreen(
 
     fun handleSubmitUserNames() {
         navController.navigate(Screen.CaptureEmailScreen.name)
-//        val isFirstNameValid = firstName.data.text.isNotEmpty()
-//        val isLastNameValid = lastName.data.text.isNotEmpty()
-//        firstName = firstName.copy(
-//            errorMessage = if (isFirstNameValid) "" else "Required"
-//        )
-//        lastName = lastName.copy(
-//            errorMessage = if (isLastNameValid) "" else "Required"
-//        )
-//
-//        if (!isLastNameValid && !isFirstNameValid) {
-//            println("Submit form")
-//        }
+        val isFirstNameValid = firstName.data.text.isNotEmpty()
+        val isLastNameValid = lastName.data.text.isNotEmpty()
+        firstName = firstName.copy(
+            errorMessage = if (isFirstNameValid) "" else "Required"
+        )
+        lastName = lastName.copy(
+            errorMessage = if (isLastNameValid) "" else "Required"
+        )
+
+        if (isLastNameValid && isFirstNameValid) {
+            navController.navigate(
+                Screen.CaptureEmailScreen.makeName(
+                    firstName = firstName.data.text,
+                    lastName = lastName.data.text
+                )
+            )
+        }
     }
 
     Scaffold(

@@ -3,18 +3,17 @@ package org.mdeveloperz.coffeebeen.android.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import org.mdeveloperz.coffeebeen.android.screens.registration.UserNameScreen
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import org.mdeveloperz.coffeebeen.android.screens.registration.UserEmailCaptureScreen
-import org.mdeveloperz.coffeebeen.android.screens.registration.UserPasswordScreen
-import org.mdeveloperz.coffeebeen.android.screens.registration.VerificationCodeScreen
+import org.mdeveloperz.coffeebeen.android.screens.registration.*
 
 
 sealed class Screen(val name: String) {
     object CaptureNameScreen : Screen(name = "capture_name")
-    object CaptureEmailScreen : Screen(name = "capture_email")
-    object CapturePasswordScreen : Screen(name = "capture_password")
+    object CaptureEmailScreen : Screen(name = "capture_email/{firstName}/{lastName}")
+    object CapturePasswordScreen :
+        Screen(name = "capture_password/{firstName}/{lastName}/{username}/{email}")
+
     object OTPVerificationScreen : Screen(name = "otp_verification")
 }
 
@@ -24,18 +23,39 @@ fun CoffeeBeenNavHostController(
 ) {
     NavHost(
         navController = navigationController,
-        startDestination = Screen.CaptureEmailScreen.name
+        startDestination = Screen.CaptureNameScreen.name
     ) {
         composable(Screen.CaptureNameScreen.name) {
             UserNameScreen(navController = navigationController)
         }
 
-        composable(Screen.CaptureEmailScreen.name) {
-            UserEmailCaptureScreen(navigationController = navigationController)
+        composable(Screen.CaptureEmailScreen.name) { backStackEntry ->
+            val firstName = backStackEntry.arguments?.getString("firstName") ?: ""
+            val lastName = backStackEntry.arguments?.getString("lastName") ?: ""
+
+            UserEmailCaptureScreen(
+                navigationController = navigationController,
+                arguments = UserEmailCaptureScreenArguments(
+                    firstName = firstName,
+                    lastName = lastName
+                )
+            )
         }
 
-        composable(Screen.CapturePasswordScreen.name) {
-            UserPasswordScreen(navigationController = navigationController)
+        composable(Screen.CapturePasswordScreen.name) { backStackEntry ->
+            val firstName = backStackEntry.arguments?.getString("firstName") ?: ""
+            val lastName = backStackEntry.arguments?.getString("lastName") ?: ""
+            val username = backStackEntry.arguments?.getString("username") ?: ""
+            val email = backStackEntry.arguments?.getString("email") ?: ""
+
+            UserPasswordScreen(
+                navigationController = navigationController, argument = UserPasswordScreenArgument(
+                    firstName = firstName,
+                    lastName = lastName,
+                    username = username,
+                    email = email
+                )
+            )
         }
 
         composable(Screen.OTPVerificationScreen.name) {

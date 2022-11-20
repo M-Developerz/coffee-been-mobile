@@ -12,3 +12,6 @@ data class UserValidationViewState(
 ) : ViewState
 
 val EMPTY_STATE = UserValidationViewState()
+
+val UserValidationViewState.isLoading
+    get() = loadingState == LoadingState.Loading
