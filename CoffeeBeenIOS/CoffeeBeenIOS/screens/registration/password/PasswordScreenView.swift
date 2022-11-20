@@ -8,37 +8,41 @@
 
 import SwiftUI
 import CommonDomain
+import UIPilot
 
-struct PasswordScreenViewArguments {
+struct PasswordScreenView: View {
+    @EnvironmentObject var pilot: UIPilot<AppRoute>
+    @ObservedObject var viewModel = PasswordScreenViewModel()
+        
+    @State private var password: String = ""
+    @State private var confirmPassword: String = ""
+    @State private var isStartNavigationLinkActive = false
+    @State private var hasNetworkError: Bool = false
+    
     let firstName: String
     let lastName: String
     let email: String
     let username: String
-}
 
-struct PasswordScreenView: View {
-    @ObservedObject var viewModel = PasswordScreenViewModel()
     
-    let arguments: PasswordScreenViewArguments
-    
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    @State private var isStartNavigationLinkActive = false
-    
-    func handleCreateUserAction() {
+    private func handleCreateUserAction() {
         let user =  UserModel(
-            firstName: arguments.firstName,
-            lastName: arguments.lastName,
-            username: arguments.username,
-            email: arguments.email,
+            firstName: firstName,
+            lastName: lastName,
+            username: username,
+            email: email,
             id: nil,
             password: password
         )
         viewModel.createUserAccount(user: user)
     }
     
-    func onViewStateChange() {
-        isStartNavigationLinkActive = viewModel.isCreateAccountSuccess
+    private func onViewStateChange() {
+        if viewModel.isOperationSuccess {
+            pilot.popTo(.start)
+        }
+        
+        hasNetworkError = viewModel.isOperationError
     }
 
     var body: some View {
@@ -60,7 +64,10 @@ struct PasswordScreenView: View {
             ).padding(.top, 20)
 
             Spacer()
-
+            
+            Text("Unknown Error")
+                .opacity(hasNetworkError ? 1 : 0)
+            
             Button(action: handleCreateUserAction) {
                 HStack(alignment: .center) {
                     Text("Create Password")
@@ -73,26 +80,23 @@ struct PasswordScreenView: View {
                 
             }.padding(.bottom, 50)
                 .padding(.top, 100)
-            
-            NavigationLink("", destination: StartScreenView(), isActive: $isStartNavigationLinkActive)
+                .onAppear {
+                    viewModel.onViewStateChanged = onViewStateChange
+                }
 
         }
                 .padding(.horizontal, 20)
-                .onAppear {
-                    onViewStateChange()
-                }
     }
 }
 
 struct PasswordScreenView_Previews: PreviewProvider {
-    
-    static let arguments = PasswordScreenViewArguments(
-        firstName: "",
-        lastName: "",
-        email: "",
-        username: ""
-    )
     static var previews: some View {
-        PasswordScreenView(arguments: arguments)
+        
+        PasswordScreenView(
+            firstName: "",
+            lastName: "",
+            email: "",
+            username: ""
+        )
     }
 }

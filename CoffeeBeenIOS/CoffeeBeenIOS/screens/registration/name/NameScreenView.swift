@@ -7,15 +7,25 @@
 //
 
 import SwiftUI
+import UIPilot
 
 struct NameScreenView: View {
+    @EnvironmentObject var pilot: UIPilot<AppRoute>
+
     @State private var firstName: String = ""
+    @State private var firstNameError: String? = nil
     @State private var lastName: String = ""
-    @State private var showUserNameAndEmailScreen = false
+    @State private var lastNameError: String? = nil
     
-    var arguments:  EmailScreeViewArguments {
-        EmailScreeViewArguments(firstName: firstName, lastName: lastName)
+    private func handleSubmitUsername() {
+        firstNameError = firstName.isEmpty ? "Required" : nil
+        lastNameError = lastName.isEmpty ? "Required" : nil
+        
+        if !firstName.isEmpty && !lastName.isEmpty {
+            pilot.push(.username(firstName: firstName, lastName: lastName))
+        }
     }
+    
     
     var body: some View {
         VStack {
@@ -24,20 +34,20 @@ struct NameScreenView: View {
             TextInputField(
                     value: $firstName,
                     label: "First Name",
+                    errorMessage: firstNameError,
                     placeHolder: "John"
             ).padding(.top, 40)
 
             TextInputField(
                     value: $lastName,
                     label: "Last Name",
+                    errorMessage: lastNameError,
                     placeHolder: "Doe"
             ).padding(.top, 20)
 
             Spacer()
 
-            Button(action: {
-                showUserNameAndEmailScreen.toggle()
-            }) {
+            Button(action: handleSubmitUsername) {
                 HStack(alignment: .center) {
                     Text("Input Account")
                             .foregroundColor(.white)
@@ -50,10 +60,6 @@ struct NameScreenView: View {
             }
                     .padding(.bottom, 50)
                     .padding(.top, 100)
-
-            NavigationLink(
-                destination: EmailScreenView(arguments: arguments), isActive: $showUserNameAndEmailScreen) {
-            }
 
         }
                 .padding(.horizontal, 20)

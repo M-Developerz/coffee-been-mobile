@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import UIPilot
 
 struct StartScreenView: View {
+    @EnvironmentObject var pilot: UIPilot<AppRoute>
+
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isNameScreenLinkActive = false
@@ -46,7 +49,9 @@ struct StartScreenView: View {
 
             Spacer()
 
-            Button(action: handleCreateUserAction) {
+            Button(action: {
+                pilot.push(.name)
+            }) {
                 HStack(alignment: .center) {
                     Text("Create Account")
                             .foregroundColor(Color.green)
@@ -73,13 +78,6 @@ struct StartScreenView: View {
                         .cornerRadius(15)
             }
                     .padding(.bottom, 50)
-            
-            // Navigation Links
-            NavigationLink(
-                "",
-                destination: NameScreenView(),
-                isActive: $isNameScreenLinkActive
-            )
 
         }
                 .padding(.horizontal, 20)

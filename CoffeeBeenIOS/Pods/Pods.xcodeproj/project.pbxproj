@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -20,13 +20,26 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5756164F60BD7F78EBA10FAB7266B0F8 /* Pods-CoffeeBeenIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB02FF90D30D0A00C648580A4B81FC9F /* Pods-CoffeeBeenIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		978D5485CA0DBF454C652C68D7A6EB54 /* Pods-CoffeeBeenIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 791314F2BDE1E1DBD30C895119C5934A /* Pods-CoffeeBeenIOS-dummy.m */; };
-		F4B03D41F57D97178A1AC3DFC8465E42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		14EAB3BB7A88D263567C6B8A1CBFC44F /* Pods-CoffeeBeenIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D73C37431FA46DFDDC671E69DC9DCC09 /* Pods-CoffeeBeenIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2428AD992DE1861C524F3FB9066E4290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2D69D3AD55C45442B547EC7CEE3FA06E /* UIPilot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B329ED9B9D343404C709054E8222E80 /* UIPilot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67A9BA5EA63BC9AE2FD55E078A3F0956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		7BC0F9B0754BE7918609D4AA42285952 /* UIPilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F7808EF792EAFDC050F740A7EE325 /* UIPilot.swift */; };
+		8B3B8161C4ACC83E2436EB0EC0F24053 /* UIPilot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 385FBA19AD7ED4905AF0B7A33EE520DB /* UIPilot-dummy.m */; };
+		90EB02BF25B0D839A8116D28184D251D /* Pods-CoffeeBeenIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CD5484652E3C2680C08EE861750F0E /* Pods-CoffeeBeenIOS-dummy.m */; };
+		D464F8689281248BF88E3D6D0777D210 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210E47C0235669414C480A876DC2540C /* DebugLog.swift */; };
+		FAA0C060828D2181BE22370D76BE6305 /* EmptyLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2083266D002FE1F0655DC778CF02F5 /* EmptyLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0DD113EC413127D7A3C8620191A1FCFB /* PBXContainerItemProxy */ = {
+		9251311B0CF054611356E8B74CB99B10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0B88E5B91027290E293E01896CF788A;
+			remoteInfo = UIPilot;
+		};
+		B08C9B54B26CA020B7BF3D4BFF8ED6B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -36,28 +49,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16F0C3A95D578BEFF995ED1519D31D8C /* Pods-CoffeeBeenIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoffeeBeenIOS-Info.plist"; sourceTree = "<group>"; };
-		5242B4FDE7C17198E09659D3CE90CE87 /* Pods-CoffeeBeenIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoffeeBeenIOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		068DA2F26DECA34041AB6C5749C600CF /* UIPilot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIPilot.release.xcconfig; sourceTree = "<group>"; };
+		0A2083266D002FE1F0655DC778CF02F5 /* EmptyLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyLog.swift; path = Sources/UIPilot/EmptyLog.swift; sourceTree = "<group>"; };
+		210E47C0235669414C480A876DC2540C /* DebugLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DebugLog.swift; path = Sources/UIPilot/DebugLog.swift; sourceTree = "<group>"; };
+		385FBA19AD7ED4905AF0B7A33EE520DB /* UIPilot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIPilot-dummy.m"; sourceTree = "<group>"; };
+		41CD5484652E3C2680C08EE861750F0E /* Pods-CoffeeBeenIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoffeeBeenIOS-dummy.m"; sourceTree = "<group>"; };
+		5953D55D729D6C484B28AE728B6D0030 /* Pods-CoffeeBeenIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoffeeBeenIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5AB0DC38F2BBCD8C77144811DAB059B7 /* CommonDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommonDomain.debug.xcconfig; sourceTree = "<group>"; };
+		6832D7EFD34787A668BC8BD43C9AD98B /* Pods-CoffeeBeenIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoffeeBeenIOS-frameworks.sh"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		791314F2BDE1E1DBD30C895119C5934A /* Pods-CoffeeBeenIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoffeeBeenIOS-dummy.m"; sourceTree = "<group>"; };
-		839B74E27DAA144CD4FA84267C75B88C /* Pods-CoffeeBeenIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoffeeBeenIOS.debug.xcconfig"; sourceTree = "<group>"; };
-		865886DC84F38785959119F65BEABA6F /* Pods-CoffeeBeenIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoffeeBeenIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7E50C8C2061E36EE064D71BC1E0FC24E /* Pods-CoffeeBeenIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoffeeBeenIOS.release.xcconfig"; sourceTree = "<group>"; };
+		849BF8806DF8DF46B1F027441F249369 /* Pods-CoffeeBeenIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoffeeBeenIOS-Info.plist"; sourceTree = "<group>"; };
+		8B329ED9B9D343404C709054E8222E80 /* UIPilot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPilot-umbrella.h"; sourceTree = "<group>"; };
 		8CB5C09AF2B6815936F729E10448AA9B /* CommonDomain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonDomain.framework; path = build/cocoapods/framework/CommonDomain.framework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A6B57ED01861D040F7CC97D13E0035BC /* Pods-CoffeeBeenIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoffeeBeenIOS.modulemap"; sourceTree = "<group>"; };
-		C4C76D8E4100BA0273CB79208FAB6FD8 /* Pods-CoffeeBeenIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoffeeBeenIOS.release.xcconfig"; sourceTree = "<group>"; };
-		DB02FF90D30D0A00C648580A4B81FC9F /* Pods-CoffeeBeenIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoffeeBeenIOS-umbrella.h"; sourceTree = "<group>"; };
+		A0BD391D5703B1ABA725A0E54FF8FCB8 /* UIPilot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UIPilot.modulemap; sourceTree = "<group>"; };
+		BB2E8E592B061495BC4FF44E3CA1A7AD /* UIPilot */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIPilot; path = UIPilot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3E72C5C7BDBDC7C2AD819472B67AF9 /* Pods-CoffeeBeenIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoffeeBeenIOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		D1C4DE37AC5DC0BBDA8F4659137C5194 /* Pods-CoffeeBeenIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoffeeBeenIOS.modulemap"; sourceTree = "<group>"; };
+		D73C37431FA46DFDDC671E69DC9DCC09 /* Pods-CoffeeBeenIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoffeeBeenIOS-umbrella.h"; sourceTree = "<group>"; };
+		D89FA102535338762E128525D50857B8 /* UIPilot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPilot-prefix.pch"; sourceTree = "<group>"; };
+		E466596282D71B24A3825D2DD63C8B7D /* UIPilot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIPilot.debug.xcconfig; sourceTree = "<group>"; };
 		E4ABA9D550B51DA4B00D031F09677079 /* Pods-CoffeeBeenIOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CoffeeBeenIOS"; path = Pods_CoffeeBeenIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAED26A821BCB06B4BBB64A1A1126DDD /* UIPilot-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UIPilot-Info.plist"; sourceTree = "<group>"; };
+		F245AAB960FE81512C9EB33D38CE3A4E /* Pods-CoffeeBeenIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoffeeBeenIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F33F7808EF792EAFDC050F740A7EE325 /* UIPilot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIPilot.swift; path = Sources/UIPilot/UIPilot.swift; sourceTree = "<group>"; };
 		F7971ED79000541D3EF0A562E501D488 /* CommonDomain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommonDomain.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B512C454AAE13751945FC84BC9BB92E0 /* Frameworks */ = {
+		1C1AAF6FB372683122E1A9725A10FB00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B03D41F57D97178A1AC3DFC8465E42 /* Foundation.framework in Frameworks */,
+				67A9BA5EA63BC9AE2FD55E078A3F0956 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7226FDA076FC856D9E306F0799A59FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2428AD992DE1861C524F3FB9066E4290 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,20 +105,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		188115E5A462F73EC33F7B1959C16407 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7344AAE8FC3F94EE21B3BC2CC20FBC4 /* Pods-CoffeeBeenIOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		5D55D93C64600BF06E1CB80C416ECD78 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B8C7100208344653B11FBDF7424401F5 /* Pods-CoffeeBeenIOS */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		63AB733C75127B1541BE6425CA802617 /* CommonDomain */ = {
@@ -98,6 +131,15 @@
 			path = "../../mobile-common/common-container";
 			sourceTree = "<group>";
 		};
+		7729E499DFBEF5DCC8B742E003421506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABA9D550B51DA4B00D031F09677079 /* Pods-CoffeeBeenIOS */,
+				BB2E8E592B061495BC4FF44E3CA1A7AD /* UIPilot */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9F46A6EEC3CFD5E16E021A7756BD5C1D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,20 +150,12 @@
 			path = "../../CoffeeBeenIOS/Pods/Target Support Files/CommonDomain";
 			sourceTree = "<group>";
 		};
-		B8C7100208344653B11FBDF7424401F5 /* Pods-CoffeeBeenIOS */ = {
+		BA5BF1F153BE49338A8BDA836AEE0CE1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A6B57ED01861D040F7CC97D13E0035BC /* Pods-CoffeeBeenIOS.modulemap */,
-				865886DC84F38785959119F65BEABA6F /* Pods-CoffeeBeenIOS-acknowledgements.markdown */,
-				5242B4FDE7C17198E09659D3CE90CE87 /* Pods-CoffeeBeenIOS-acknowledgements.plist */,
-				791314F2BDE1E1DBD30C895119C5934A /* Pods-CoffeeBeenIOS-dummy.m */,
-				16F0C3A95D578BEFF995ED1519D31D8C /* Pods-CoffeeBeenIOS-Info.plist */,
-				DB02FF90D30D0A00C648580A4B81FC9F /* Pods-CoffeeBeenIOS-umbrella.h */,
-				839B74E27DAA144CD4FA84267C75B88C /* Pods-CoffeeBeenIOS.debug.xcconfig */,
-				C4C76D8E4100BA0273CB79208FAB6FD8 /* Pods-CoffeeBeenIOS.release.xcconfig */,
+				D264909CC5A33A765039DD5F94B78933 /* UIPilot */,
 			);
-			name = "Pods-CoffeeBeenIOS";
-			path = "Target Support Files/Pods-CoffeeBeenIOS";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BB1EC31002BF8D23C8558CE4891FB8B4 /* Development Pods */ = {
@@ -138,8 +172,9 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BB1EC31002BF8D23C8558CE4891FB8B4 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				E47B1BBFD8CB3512C69FA95A7665D2A2 /* Products */,
-				5D55D93C64600BF06E1CB80C416ECD78 /* Targets Support Files */,
+				BA5BF1F153BE49338A8BDA836AEE0CE1 /* Pods */,
+				7729E499DFBEF5DCC8B742E003421506 /* Products */,
+				188115E5A462F73EC33F7B1959C16407 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,22 +186,66 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E47B1BBFD8CB3512C69FA95A7665D2A2 /* Products */ = {
+		D264909CC5A33A765039DD5F94B78933 /* UIPilot */ = {
 			isa = PBXGroup;
 			children = (
-				E4ABA9D550B51DA4B00D031F09677079 /* Pods-CoffeeBeenIOS */,
+				210E47C0235669414C480A876DC2540C /* DebugLog.swift */,
+				0A2083266D002FE1F0655DC778CF02F5 /* EmptyLog.swift */,
+				F33F7808EF792EAFDC050F740A7EE325 /* UIPilot.swift */,
+				FD0F6D6743B8980E0CDAF748999ED56B /* Support Files */,
 			);
-			name = Products;
+			name = UIPilot;
+			path = UIPilot;
+			sourceTree = "<group>";
+		};
+		E7344AAE8FC3F94EE21B3BC2CC20FBC4 /* Pods-CoffeeBeenIOS */ = {
+			isa = PBXGroup;
+			children = (
+				D1C4DE37AC5DC0BBDA8F4659137C5194 /* Pods-CoffeeBeenIOS.modulemap */,
+				F245AAB960FE81512C9EB33D38CE3A4E /* Pods-CoffeeBeenIOS-acknowledgements.markdown */,
+				CF3E72C5C7BDBDC7C2AD819472B67AF9 /* Pods-CoffeeBeenIOS-acknowledgements.plist */,
+				41CD5484652E3C2680C08EE861750F0E /* Pods-CoffeeBeenIOS-dummy.m */,
+				6832D7EFD34787A668BC8BD43C9AD98B /* Pods-CoffeeBeenIOS-frameworks.sh */,
+				849BF8806DF8DF46B1F027441F249369 /* Pods-CoffeeBeenIOS-Info.plist */,
+				D73C37431FA46DFDDC671E69DC9DCC09 /* Pods-CoffeeBeenIOS-umbrella.h */,
+				5953D55D729D6C484B28AE728B6D0030 /* Pods-CoffeeBeenIOS.debug.xcconfig */,
+				7E50C8C2061E36EE064D71BC1E0FC24E /* Pods-CoffeeBeenIOS.release.xcconfig */,
+			);
+			name = "Pods-CoffeeBeenIOS";
+			path = "Target Support Files/Pods-CoffeeBeenIOS";
+			sourceTree = "<group>";
+		};
+		FD0F6D6743B8980E0CDAF748999ED56B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0BD391D5703B1ABA725A0E54FF8FCB8 /* UIPilot.modulemap */,
+				385FBA19AD7ED4905AF0B7A33EE520DB /* UIPilot-dummy.m */,
+				EAED26A821BCB06B4BBB64A1A1126DDD /* UIPilot-Info.plist */,
+				D89FA102535338762E128525D50857B8 /* UIPilot-prefix.pch */,
+				8B329ED9B9D343404C709054E8222E80 /* UIPilot-umbrella.h */,
+				E466596282D71B24A3825D2DD63C8B7D /* UIPilot.debug.xcconfig */,
+				068DA2F26DECA34041AB6C5749C600CF /* UIPilot.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UIPilot";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7D22654D56708A0783D110B0549A43A7 /* Headers */ = {
+		3BDC3B9ECE8E92F25F52CC5D7A419F46 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5756164F60BD7F78EBA10FAB7266B0F8 /* Pods-CoffeeBeenIOS-umbrella.h in Headers */,
+				2D69D3AD55C45442B547EC7CEE3FA06E /* UIPilot-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BC0F55BD355F7610255090190A71BC7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14EAB3BB7A88D263567C6B8A1CBFC44F /* Pods-CoffeeBeenIOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,21 +254,40 @@
 /* Begin PBXNativeTarget section */
 		1F7F69ABEB2149CCD022D26DDFCBA182 /* Pods-CoffeeBeenIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53F06BDDEEFC7867D25E7E7A1FDC3637 /* Build configuration list for PBXNativeTarget "Pods-CoffeeBeenIOS" */;
+			buildConfigurationList = D67DE282F261DF1626E34434039DD5BB /* Build configuration list for PBXNativeTarget "Pods-CoffeeBeenIOS" */;
 			buildPhases = (
-				7D22654D56708A0783D110B0549A43A7 /* Headers */,
-				DDE61CA9B9A0E5CD95B76B9ACD1CCD9B /* Sources */,
-				B512C454AAE13751945FC84BC9BB92E0 /* Frameworks */,
-				3CE0572452F22A9E0EECAC5617FCC843 /* Resources */,
+				6BC0F55BD355F7610255090190A71BC7 /* Headers */,
+				B163652CD265918392402EFC7A224F5B /* Sources */,
+				1C1AAF6FB372683122E1A9725A10FB00 /* Frameworks */,
+				57C567ACD2C03538FDCEFB6DF0590297 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6DF7423B2CE88C977E877F433CB3FF33 /* PBXTargetDependency */,
+				D0BAAAEBE2BF4A1211142386B339672C /* PBXTargetDependency */,
+				A97D3130AA5C66760E41E36CE3C9A4F6 /* PBXTargetDependency */,
 			);
 			name = "Pods-CoffeeBeenIOS";
 			productName = Pods_CoffeeBeenIOS;
 			productReference = E4ABA9D550B51DA4B00D031F09677079 /* Pods-CoffeeBeenIOS */;
+			productType = "com.apple.product-type.framework";
+		};
+		B0B88E5B91027290E293E01896CF788A /* UIPilot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 702B300683CB4E2EEC42AA2D15FD946A /* Build configuration list for PBXNativeTarget "UIPilot" */;
+			buildPhases = (
+				3BDC3B9ECE8E92F25F52CC5D7A419F46 /* Headers */,
+				3A496D81B7A212C77467D4C80FE6104C /* Sources */,
+				E7226FDA076FC856D9E306F0799A59FB /* Frameworks */,
+				63D32FDBB7140FEDF8328C8F5CF870BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIPilot;
+			productName = UIPilot;
+			productReference = BB2E8E592B061495BC4FF44E3CA1A7AD /* UIPilot */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +300,7 @@
 				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -210,18 +308,26 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E47B1BBFD8CB3512C69FA95A7665D2A2 /* Products */;
+			productRefGroup = 7729E499DFBEF5DCC8B742E003421506 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				146B9AB526BA2C497F9DC57E002FC148 /* CommonDomain */,
 				1F7F69ABEB2149CCD022D26DDFCBA182 /* Pods-CoffeeBeenIOS */,
+				B0B88E5B91027290E293E01896CF788A /* UIPilot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3CE0572452F22A9E0EECAC5617FCC843 /* Resources */ = {
+		57C567ACD2C03538FDCEFB6DF0590297 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D32FDBB7140FEDF8328C8F5CF870BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,26 +350,81 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DDE61CA9B9A0E5CD95B76B9ACD1CCD9B /* Sources */ = {
+		3A496D81B7A212C77467D4C80FE6104C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				978D5485CA0DBF454C652C68D7A6EB54 /* Pods-CoffeeBeenIOS-dummy.m in Sources */,
+				D464F8689281248BF88E3D6D0777D210 /* DebugLog.swift in Sources */,
+				FAA0C060828D2181BE22370D76BE6305 /* EmptyLog.swift in Sources */,
+				7BC0F9B0754BE7918609D4AA42285952 /* UIPilot.swift in Sources */,
+				8B3B8161C4ACC83E2436EB0EC0F24053 /* UIPilot-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B163652CD265918392402EFC7A224F5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EB02BF25B0D839A8116D28184D251D /* Pods-CoffeeBeenIOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6DF7423B2CE88C977E877F433CB3FF33 /* PBXTargetDependency */ = {
+		A97D3130AA5C66760E41E36CE3C9A4F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIPilot;
+			target = B0B88E5B91027290E293E01896CF788A /* UIPilot */;
+			targetProxy = 9251311B0CF054611356E8B74CB99B10 /* PBXContainerItemProxy */;
+		};
+		D0BAAAEBE2BF4A1211142386B339672C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CommonDomain;
 			target = 146B9AB526BA2C497F9DC57E002FC148 /* CommonDomain */;
-			targetProxy = 0DD113EC413127D7A3C8620191A1FCFB /* PBXContainerItemProxy */;
+			targetProxy = B08C9B54B26CA020B7BF3D4BFF8ED6B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		46211DB3B93859D5EB6E5A2189072431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E50C8C2061E36EE064D71BC1E0FC24E /* Pods-CoffeeBeenIOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CoffeeBeenIOS/Pods-CoffeeBeenIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoffeeBeenIOS/Pods-CoffeeBeenIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		593F10BFFA94DAC7D6E17FB8A7F32D72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,9 +487,9 @@
 			};
 			name = Release;
 		};
-		5D4B92EBEE5E59A869BF10376ECD3277 /* Release */ = {
+		8D7EE27DF47FE83642A5F0C98E19DEDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4C76D8E4100BA0273CB79208FAB6FD8 /* Pods-CoffeeBeenIOS.release.xcconfig */;
+			baseConfigurationReference = 5953D55D729D6C484B28AE728B6D0030 /* Pods-CoffeeBeenIOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -358,11 +519,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		9C8CDB36A7CDEA81EB29484463E9BA6B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -378,6 +538,41 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9FADB6B62F852F528DEDF1189C6EEECC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E466596282D71B24A3825D2DD63C8B7D /* UIPilot.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIPilot/UIPilot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIPilot/UIPilot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UIPilot/UIPilot.modulemap";
+				PRODUCT_MODULE_NAME = UIPilot;
+				PRODUCT_NAME = UIPilot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -447,43 +642,6 @@
 			};
 			name = Debug;
 		};
-		BF39B397EE81BFBD4AF98AD534E09DD2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 839B74E27DAA144CD4FA84267C75B88C /* Pods-CoffeeBeenIOS.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CoffeeBeenIOS/Pods-CoffeeBeenIOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoffeeBeenIOS/Pods-CoffeeBeenIOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		CFCE7DFEDE6DB06F4F1CD182ECB31F78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7971ED79000541D3EF0A562E501D488 /* CommonDomain.release.xcconfig */;
@@ -502,6 +660,42 @@
 			};
 			name = Release;
 		};
+		ED29F2E54FB1E7470EDB2CD65CA4C502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 068DA2F26DECA34041AB6C5749C600CF /* UIPilot.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIPilot/UIPilot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIPilot/UIPilot-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UIPilot/UIPilot.modulemap";
+				PRODUCT_MODULE_NAME = UIPilot;
+				PRODUCT_NAME = UIPilot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -514,11 +708,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53F06BDDEEFC7867D25E7E7A1FDC3637 /* Build configuration list for PBXNativeTarget "Pods-CoffeeBeenIOS" */ = {
+		702B300683CB4E2EEC42AA2D15FD946A /* Build configuration list for PBXNativeTarget "UIPilot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF39B397EE81BFBD4AF98AD534E09DD2 /* Debug */,
-				5D4B92EBEE5E59A869BF10376ECD3277 /* Release */,
+				9FADB6B62F852F528DEDF1189C6EEECC /* Debug */,
+				ED29F2E54FB1E7470EDB2CD65CA4C502 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -528,6 +722,15 @@
 			buildConfigurations = (
 				9C8CDB36A7CDEA81EB29484463E9BA6B /* Debug */,
 				CFCE7DFEDE6DB06F4F1CD182ECB31F78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D67DE282F261DF1626E34434039DD5BB /* Build configuration list for PBXNativeTarget "Pods-CoffeeBeenIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D7EE27DF47FE83642A5F0C98E19DEDA /* Debug */,
+				46211DB3B93859D5EB6E5A2189072431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,47 +7,45 @@
 //
 
 import SwiftUI
-
-struct EmailScreeViewArguments {
-    let firstName: String
-    let lastName: String
-}
-
+import UIPilot
 
 struct EmailScreenView: View {
+    @EnvironmentObject var pilot: UIPilot<AppRoute>
     @ObservedObject var viewModel = EmailScreenViewModel()
 
     @State private var username: String = ""
+    @State private var usernameError: String? = nil
     @State private var email: String = ""
-    @State private var isPasswordLinkActive = false
+    @State private var emailError: String? = nil
+    @State private var hasNetworkErroe: Bool = false
     
-    let arguments: EmailScreeViewArguments
+    let firstName: String
+    let lastName: String
 
     private func handleSubmitUsernameAndEmail() {
-        if username.isEmpty && email.isEmpty {
-            print("Invalid Email and Password")
-            return
+        usernameError = username.isEmpty ? nil : "Required"
+        emailError = email.isEmpty ? nil : "Required"
+        
+        if !username.isEmpty && !email.isEmpty {
+            let user = UserValidationModel(
+                username: username,
+                email: email
+            )
+            
+            viewModel.validateUser(user: user)
         }
-        let user = UserValidationModel(username: username, email: email)
-        viewModel.validateUser(user: user)
     }
     
-    private func onViewStateChanged() {
-        isPasswordLinkActive = viewModel.isDataValid
-    }
-    
-    var passwordScreenArgs: PasswordScreenViewArguments {
-        PasswordScreenViewArguments(
-            firstName: arguments.firstName,
-            lastName: arguments.lastName,
-            email: email,
-            username: username
-        )
+    private func onUsernameAndEmailValid() {
+        if viewModel.isDataValid {
+            pilot.push(.password(firstName: firstName, lastName: lastName, email: email, username: username))
+        }
+        
+        hasNetworkErroe = !viewModel.isDataValid
     }
 
 
     var body: some View {
-        NavigationView {
             VStack {
                 RegistrationHeaderView(
                     headerTitle: "Input Your Account"
@@ -67,11 +65,6 @@ struct EmailScreenView: View {
                 
                 Spacer()
                 
-                if viewModel.isloading {
-                    Text("Loading..")
-                }
-                
-                
                 Button(action: handleSubmitUsernameAndEmail) {
                     HStack(alignment: .center) {
                         Text("Create Account")
@@ -85,28 +78,21 @@ struct EmailScreenView: View {
                 }
                 .padding(.bottom, 50)
                 .padding(.top, 15)
-                
-                // Navigation
-                NavigationLink("", destination: PasswordScreenView(arguments: passwordScreenArgs),
-                               isActive: $isPasswordLinkActive)
+                .onAppear {
+                    viewModel.onViewStateChanged = onUsernameAndEmailValid
+                }
                 
                 
             }
             .padding(.horizontal, 20)
-            
-        }.onAppear {
-            viewModel.onViewStateChanged = onViewStateChanged
-        }
     }
 }
 
 struct CaptureEmailAndPassword_Previews: PreviewProvider {
     static var previews: some View {
         EmailScreenView(
-            arguments:EmailScreeViewArguments(
-                firstName: "",
-                lastName: ""
-            )
+            firstName: "",
+            lastName: ""
         )
     }
 }

@@ -11,12 +11,18 @@ import CommonDomain
 
 struct PasswordScreenViewState: ViewState {
     let loadingState: LoadingState
+    let error: Error?
+    let userModel: UserModel?
 }
 
 class PasswordScreenViewModel: BaseViewModel<PasswordScreenViewState> {
     
     init() {
-        super.init(initialState: PasswordScreenViewState(loadingState: .idle))
+        super.init(initialState: PasswordScreenViewState(
+            loadingState: .idle,
+            error: nil,
+            userModel: nil
+        ))
     }
     
     override init(initialState: PasswordScreenViewState) {
@@ -25,7 +31,11 @@ class PasswordScreenViewModel: BaseViewModel<PasswordScreenViewState> {
     
     func createUserAccount(user: UserModel) {
         updateState { prevState in
-            PasswordScreenViewState(loadingState: .idle)
+            PasswordScreenViewState(
+                loadingState: .idle,
+                error: prevState.error,
+                userModel: prevState.userModel
+            )
         }
         
         executeUseCase(
@@ -34,13 +44,19 @@ class PasswordScreenViewModel: BaseViewModel<PasswordScreenViewState> {
             onResult: { [weak self] result in
                 self?.updateState { prevState in
                     PasswordScreenViewState(
-                        loadingState: .success
+                        loadingState: .success,
+                        error: prevState.error,
+                        userModel: prevState.userModel
                     )
                 }
             },
             onError: {[weak self] error in
                 self?.updateState { prevState in
-                    PasswordScreenViewState(loadingState: .error)
+                    PasswordScreenViewState(
+                        loadingState: .error,
+                        error: error,
+                        userModel: prevState.userModel
+                    )
                 }
             }
         )
@@ -48,7 +64,11 @@ class PasswordScreenViewModel: BaseViewModel<PasswordScreenViewState> {
 }
 
 extension PasswordScreenViewModel {
-    var isCreateAccountSuccess: Bool {
-        return viewState.loadingState == .success
+    var isOperationSuccess: Bool {
+        return viewState.loadingState == .success && viewState.error == nil
+    }
+    
+    var isOperationError: Bool {
+        return viewState.loadingState == .error && viewState.error != nil
     }
 }
