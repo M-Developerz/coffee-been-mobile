@@ -8,18 +8,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
-import org.mdeveloperz.coffeebeen.android.gray
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.navigation.Screen
-import org.mdeveloperz.coffeebeen.android.presentation.UserAccountCreationViewModel
+import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.UserAccountCreationViewModel
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
