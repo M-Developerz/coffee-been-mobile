@@ -66,7 +66,9 @@ fun UserNameScreen(
     }
 
     Scaffold(
-        topBar = { TopToolbar() {} }
+        topBar = { TopToolbar() {
+            navController.navigateUp()
+        } }
     ) { contentPadding ->
         Column(
             modifier = Modifier

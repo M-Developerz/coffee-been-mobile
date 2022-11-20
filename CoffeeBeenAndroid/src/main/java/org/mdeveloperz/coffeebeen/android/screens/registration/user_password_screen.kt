@@ -82,7 +82,9 @@ fun UserPasswordScreen(
     }
 
     Scaffold(
-        topBar = { TopToolbar() {} }
+        topBar = { TopToolbar() {
+            navigationController.navigateUp()
+        } }
     ) { contentPadding ->
         Column(
             modifier = Modifier

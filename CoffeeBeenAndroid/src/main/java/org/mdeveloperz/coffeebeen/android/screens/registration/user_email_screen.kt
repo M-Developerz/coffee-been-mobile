@@ -93,7 +93,9 @@ fun UserEmailCaptureScreen(
     }
 
     Scaffold(
-        topBar = { TopToolbar() {} }
+        topBar = { TopToolbar() {
+            navigationController.navigateUp()
+        } }
     ) { contentPadding ->
         Column(
             modifier = Modifier

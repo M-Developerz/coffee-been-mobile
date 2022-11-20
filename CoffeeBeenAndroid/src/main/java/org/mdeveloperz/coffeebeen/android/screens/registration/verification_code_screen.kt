@@ -17,7 +17,9 @@ fun VerificationCodeScreen(
     navigationController: NavHostController = rememberNavController()
 ) {
     Scaffold(
-        topBar = { TopToolbar() {} }
+        topBar = { TopToolbar() {
+            navigationController.navigateUp()
+        } }
     ) { contentPadding ->
         Column(
             modifier = Modifier
