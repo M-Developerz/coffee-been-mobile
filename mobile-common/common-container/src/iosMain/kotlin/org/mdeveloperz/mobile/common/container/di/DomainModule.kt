@@ -4,7 +4,7 @@ import org.mdeveloperz.mobile.common.container.di.CommonDataModule.userAuthentic
 import org.mdeveloperz.mobile.common.domain.usecase.CreateUserAccountUseCase
 import org.mdeveloperz.mobile.common.domain.usecase.ValidateUserUseCase
 
-object CommonDomainModule {
+object DomainModule {
     val createUserAccountUseCase = CreateUserAccountUseCase(userAuthenticationRepository)
     val validateUserUseCase = ValidateUserUseCase(userAuthenticationRepository)
 }

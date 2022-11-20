@@ -14,13 +14,17 @@
 		6E2C41322929630E00D0C504 /* EmailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C41312929630E00D0C504 /* EmailScreenViewModel.swift */; };
 		6E2C4136292963CC00D0C504 /* RegistrationModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C4135292963CC00D0C504 /* RegistrationModel+Extension.swift */; };
 		6E2C4139292967FF00D0C504 /* HiddenIfModifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C4138292967FF00D0C504 /* HiddenIfModifier+Extension.swift */; };
+		6E2C413C292A3DA300D0C504 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C413B292A3DA300D0C504 /* StartScreenView.swift */; };
+		6E2C4142292A49D100D0C504 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C4141292A49D100D0C504 /* BaseViewModel.swift */; };
+		6E2C4144292A4C1000D0C504 /* domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C4143292A4C1000D0C504 /* domain.swift */; };
+		6E2C4146292A4E0200D0C504 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C4145292A4E0200D0C504 /* LoadingState.swift */; };
+		6E2C4148292A5A8300D0C504 /* PasswordScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C4147292A5A8300D0C504 /* PasswordScreenViewModel.swift */; };
 		6E7BBD5529292B9900652417 /* NameScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD5429292B9900652417 /* NameScreenView.swift */; };
 		6E7BBD5829292BC700652417 /* RegistrationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD5729292BC700652417 /* RegistrationHeaderView.swift */; };
 		6E7BBD5A2929355900652417 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD592929355900652417 /* TextInputField.swift */; };
 		6E7BBD5C2929394400652417 /* EmailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD5B2929394400652417 /* EmailScreenView.swift */; };
 		6E7BBD5E29293C1100652417 /* PasswordScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD5D29293C1100652417 /* PasswordScreenView.swift */; };
 		6E7BBD6029293D4700652417 /* PasswordTextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD5F29293D4700652417 /* PasswordTextInputField.swift */; };
-		6E7BBD6229293EF300652417 /* OTPVerificationScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7BBD6129293EF300652417 /* OTPVerificationScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +37,17 @@
 		6E2C41312929630E00D0C504 /* EmailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailScreenViewModel.swift; sourceTree = "<group>"; };
 		6E2C4135292963CC00D0C504 /* RegistrationModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegistrationModel+Extension.swift"; sourceTree = "<group>"; };
 		6E2C4138292967FF00D0C504 /* HiddenIfModifier+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HiddenIfModifier+Extension.swift"; sourceTree = "<group>"; };
+		6E2C413B292A3DA300D0C504 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		6E2C4141292A49D100D0C504 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		6E2C4143292A4C1000D0C504 /* domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domain.swift; sourceTree = "<group>"; };
+		6E2C4145292A4E0200D0C504 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		6E2C4147292A5A8300D0C504 /* PasswordScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreenViewModel.swift; sourceTree = "<group>"; };
 		6E7BBD5429292B9900652417 /* NameScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameScreenView.swift; sourceTree = "<group>"; };
 		6E7BBD5729292BC700652417 /* RegistrationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationHeaderView.swift; sourceTree = "<group>"; };
 		6E7BBD592929355900652417 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		6E7BBD5B2929394400652417 /* EmailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailScreenView.swift; sourceTree = "<group>"; };
 		6E7BBD5D29293C1100652417 /* PasswordScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreenView.swift; sourceTree = "<group>"; };
 		6E7BBD5F29293D4700652417 /* PasswordTextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextInputField.swift; sourceTree = "<group>"; };
-		6E7BBD6129293EF300652417 /* OTPVerificationScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationScreenView.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* CoffeeBeenIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeBeenIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				6E2C4134292963AA00D0C504 /* authentication */,
+				6E2C4143292A4C1000D0C504 /* domain.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -106,13 +115,55 @@
 			path = modifier;
 			sourceTree = "<group>";
 		};
+		6E2C413A292A3D8E00D0C504 /* start */ = {
+			isa = PBXGroup;
+			children = (
+				6E2C413B292A3DA300D0C504 /* StartScreenView.swift */,
+			);
+			path = start;
+			sourceTree = "<group>";
+		};
+		6E2C413D292A451E00D0C504 /* name */ = {
+			isa = PBXGroup;
+			children = (
+				6E7BBD5429292B9900652417 /* NameScreenView.swift */,
+			);
+			path = name;
+			sourceTree = "<group>";
+		};
+		6E2C413E292A452D00D0C504 /* password */ = {
+			isa = PBXGroup;
+			children = (
+				6E7BBD5D29293C1100652417 /* PasswordScreenView.swift */,
+				6E2C4147292A5A8300D0C504 /* PasswordScreenViewModel.swift */,
+			);
+			path = password;
+			sourceTree = "<group>";
+		};
+		6E2C413F292A454900D0C504 /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				6E2C413E292A452D00D0C504 /* password */,
+				6E2C413D292A451E00D0C504 /* name */,
+				6E2C4130292962E700D0C504 /* email+username */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
+		6E2C4140292A49B700D0C504 /* bases */ = {
+			isa = PBXGroup;
+			children = (
+				6E2C4141292A49D100D0C504 /* BaseViewModel.swift */,
+				6E2C4145292A4E0200D0C504 /* LoadingState.swift */,
+			);
+			path = bases;
+			sourceTree = "<group>";
+		};
 		6E7BBD5329292B7D00652417 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				6E2C4130292962E700D0C504 /* email+username */,
-				6E7BBD5429292B9900652417 /* NameScreenView.swift */,
-				6E7BBD5D29293C1100652417 /* PasswordScreenView.swift */,
-				6E7BBD6129293EF300652417 /* OTPVerificationScreenView.swift */,
+				6E2C413F292A454900D0C504 /* registration */,
+				6E2C413A292A3D8E00D0C504 /* start */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -148,6 +199,7 @@
 		7555FF7D242A565900829871 /* CoffeeBeenIOS */ = {
 			isa = PBXGroup;
 			children = (
+				6E2C4140292A49B700D0C504 /* bases */,
 				6E2C4137292967E400D0C504 /* modifier */,
 				6E2C41332929639A00D0C504 /* model */,
 				6E7BBD5629292BA300652417 /* widgets */,
@@ -264,15 +316,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7BBD6229293EF300652417 /* OTPVerificationScreenView.swift in Sources */,
 				6E7BBD5C2929394400652417 /* EmailScreenView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				6E7BBD5529292B9900652417 /* NameScreenView.swift in Sources */,
 				6E7BBD6029293D4700652417 /* PasswordTextInputField.swift in Sources */,
 				6E2C41322929630E00D0C504 /* EmailScreenViewModel.swift in Sources */,
+				6E2C4142292A49D100D0C504 /* BaseViewModel.swift in Sources */,
 				6E7BBD5E29293C1100652417 /* PasswordScreenView.swift in Sources */,
 				6E7BBD5A2929355900652417 /* TextInputField.swift in Sources */,
+				6E2C4146292A4E0200D0C504 /* LoadingState.swift in Sources */,
+				6E2C4144292A4C1000D0C504 /* domain.swift in Sources */,
+				6E2C4148292A5A8300D0C504 /* PasswordScreenViewModel.swift in Sources */,
 				6E2C4139292967FF00D0C504 /* HiddenIfModifier+Extension.swift in Sources */,
+				6E2C413C292A3DA300D0C504 /* StartScreenView.swift in Sources */,
 				6E2C4136292963CC00D0C504 /* RegistrationModel+Extension.swift in Sources */,
 				6E7BBD5829292BC700652417 /* RegistrationHeaderView.swift in Sources */,
 			);

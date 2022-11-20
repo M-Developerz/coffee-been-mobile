@@ -12,11 +12,12 @@ struct OTPVerificationScreenView: View {
     var body: some View {
         VStack {
             RegistrationHeaderView(
-                headerTitle: "Input Your Password"
+                    headerTitle: "Input Your Password"
             )
-            
+
             Spacer()
-        }.padding(.horizontal, 20)
+        }
+                .padding(.horizontal, 20)
     }
 }
 
