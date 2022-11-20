@@ -1,5 +1,6 @@
 package org.mdeveloperz.coffeebeen.di
 
+import android.util.Log
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,13 +42,10 @@ object RemoteDataSourceModule {
         install(Logging) {
             logger = object : Logger {
                 override fun log(message: String) {
-                    Napier.v("HTTP Client", null, message)
+                    Log.d("NETWORK_REQUEST", message)
                 }
             }
-            level = LogLevel.BODY
-            filter { request ->
-                request.url.host.contains("ktor.io")
-            }
+            level = LogLevel.ALL
         }
 
         install(ContentNegotiation) {

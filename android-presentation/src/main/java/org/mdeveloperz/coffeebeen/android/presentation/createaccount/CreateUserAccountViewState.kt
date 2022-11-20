@@ -12,3 +12,6 @@ val EMPTY_STATE = CreateUserAccountViewState()
 
 val CreateUserAccountViewState.isLoading
     get() = loadingState == LoadingState.Loading
+
+val CreateUserAccountViewState.isSuccess
+    get() = loadingState == LoadingState.Success()

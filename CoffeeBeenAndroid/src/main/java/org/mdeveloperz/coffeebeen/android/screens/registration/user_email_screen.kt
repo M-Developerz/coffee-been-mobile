@@ -100,7 +100,7 @@ fun UserEmailCaptureScreen(
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input Your Email", navController = navigationController)
+            RegistrationHeader(message = "Input Your Email")
 
             TextInputField(
                 value = username

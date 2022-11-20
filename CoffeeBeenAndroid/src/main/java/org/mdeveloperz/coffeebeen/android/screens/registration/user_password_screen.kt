@@ -14,10 +14,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.*
 import org.mdeveloperz.coffeebeen.android.green
-import org.mdeveloperz.coffeebeen.android.presentation.createaccount.CreateUserAccountViewModel
-import org.mdeveloperz.coffeebeen.android.presentation.createaccount.CreateUserAccountViewState
-import org.mdeveloperz.coffeebeen.android.presentation.createaccount.EMPTY_STATE
-import org.mdeveloperz.coffeebeen.android.presentation.createaccount.isLoading
+import org.mdeveloperz.coffeebeen.android.navigation.Screen
+import org.mdeveloperz.coffeebeen.android.presentation.createaccount.*
 import org.mdeveloperz.coffeebeen.android.presentation.model.UserPresentationModel
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
@@ -36,7 +34,8 @@ fun UserPasswordScreen(
     argument: UserPasswordScreenArgument = EMPTY_ARGUMENT,
     viewModel: CreateUserAccountViewModel = hiltViewModel()
 ) {
-    val viewState: State<CreateUserAccountViewState> = viewModel.viewState.collectAsState(EMPTY_STATE)
+    val viewState: State<CreateUserAccountViewState> =
+        viewModel.viewState.collectAsState(EMPTY_STATE)
     var password by remember {
         mutableStateOf(
             TextInputFieldValue(
@@ -90,7 +89,9 @@ fun UserPasswordScreen(
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input Your Password", navController = navigationController)
+            RegistrationHeader(
+                message = "Input Your Password"
+            )
 
             PasswordInputField(
                 value = password
@@ -111,6 +112,14 @@ fun UserPasswordScreen(
             }
 
             Spacer(modifier = Modifier.weight(weight = 5F, fill = true))
+
+            if (viewState.value.isSuccess) {
+                navigationController.navigate(Screen.AppStartScreen.name) {
+                    popUpTo(Screen.AppStartScreen.name) {
+                        inclusive = true
+                    }
+                }
+            }
 
             if (viewState.value.isLoading) {
                 CircularProgressIndicator(

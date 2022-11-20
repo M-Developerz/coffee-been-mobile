@@ -24,7 +24,7 @@ fun VerificationCodeScreen(
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input OTP Verification", navController = navigationController)
+            RegistrationHeader(message = "Input OTP Verification")
         }
     }
 }

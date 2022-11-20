@@ -1,6 +1,8 @@
-package org.mdeveloperz.coffeebeen.android.screens.registration
+package org.mdeveloperz.coffeebeen.android.screens
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -10,85 +12,68 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import org.mdeveloperz.coffeebeen.android.components.PasswordInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
 import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
-import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.navigation.Screen
-import org.mdeveloperz.coffeebeen.android.navigation.makeUserEmailCaptureScreenArgument
-import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
+import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.StartHeader
 
 @Composable
-fun UserNameScreen(
-    navController: NavHostController
+fun StartScreen(
+    navigationController: NavHostController = rememberNavController()
 ) {
-    var firstName by remember {
+    var username by remember {
         mutableStateOf(
             TextInputFieldValue(
                 data = TextFieldValue(""),
                 errorMessage = "",
-                label = "First Name",
-                placeHolder = "John"
+                label = "Username",
+                placeHolder = "someone"
             )
         )
     }
 
-    var lastName by remember {
+    var password by remember {
         mutableStateOf(
             TextInputFieldValue(
                 data = TextFieldValue(""),
                 errorMessage = "",
-                label = "Last Name",
-                placeHolder = "Doe"
+                label = "Password",
+                placeHolder = "*****"
             )
         )
     }
 
-    fun handleSubmitUserNames() {
-        navController.navigate(Screen.CaptureEmailScreen.name)
-        val isFirstNameValid = firstName.data.text.isNotEmpty()
-        val isLastNameValid = lastName.data.text.isNotEmpty()
-        firstName = firstName.copy(
-            errorMessage = if (isFirstNameValid) "" else "Required"
-        )
-        lastName = lastName.copy(
-            errorMessage = if (isLastNameValid) "" else "Required"
-        )
-
-        if (isLastNameValid && isFirstNameValid) {
-            navController.navigate(
-                makeUserEmailCaptureScreenArgument(
-                    firstName = firstName.data.text,
-                    lastName = lastName.data.text
-                )
-            )
-        }
+    fun handleLogin() {
     }
 
-    Scaffold(
-        topBar = { TopToolbar() {} }
-    ) { contentPadding ->
+    fun handleCreateUserAccount() {
+        navigationController.navigate(Screen.CaptureNameScreen.name)
+    }
+
+    Scaffold { contentPadding ->
         Column(
             modifier = Modifier
                 .padding(contentPadding)
                 .padding(top = 20.dp, start = 12.dp, end = 12.dp)
         ) {
-            RegistrationHeader(message = "Input Your Name")
+            StartHeader()
 
             TextInputField(
-                value = firstName
+                value = username
             ) {
-                firstName = firstName.copy(
+                username = username.copy(
                     data = it
                 )
             }
 
             Spacer(modifier = Modifier.height(15.dp))
 
-            TextInputField(
-                value = lastName
+            PasswordInputField(
+                value = password
             ) {
-                lastName = lastName.copy(
+                password = password.copy(
                     data = it
                 )
             }
@@ -96,16 +81,38 @@ fun UserNameScreen(
             Spacer(modifier = Modifier.weight(weight = 5F, fill = true))
 
             Button(
-                onClick = ::handleSubmitUserNames,
+                onClick = ::handleCreateUserAccount,
                 modifier = Modifier
+                    .padding(top = 50.dp)
+                    .fillMaxWidth()
+                    .height(50.dp)
+                    .border(
+                        width = 1.dp,
+                        color = green,
+                        shape = RoundedCornerShape(10.dp)
+                    ),
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color.White,
+                    contentColor = green,
+                ),
+                shape = RoundedCornerShape(10.dp)
+            ) {
+                Text(text = "Create Account")
+            }
+
+            Button(
+                onClick = ::handleLogin,
+                modifier = Modifier
+                    .padding(top = 25.dp)
                     .fillMaxWidth()
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = green,
                     contentColor = Color.White
-                )
+                ),
+                shape = RoundedCornerShape(10.dp)
             ) {
-                Text(text = "Input Account")
+                Text(text = "Login")
             }
 
             Spacer(modifier = Modifier.weight(weight = 1F, fill = true))
@@ -115,6 +122,6 @@ fun UserNameScreen(
 
 @Preview
 @Composable
-fun UserNameScreenPreview() {
-    UserNameScreen(navController = rememberNavController())
+fun StartScreenPreview() {
+    StartScreen()
 }

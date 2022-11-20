@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "org.mdeveloperz.coffeebeen.android"
         minSdk = 23
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
     }
@@ -19,7 +19,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.3.1"
     }
     packagingOptions {
         resources {
@@ -31,16 +31,20 @@ android {
             isMinifyEnabled = false
         }
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation("androidx.compose.ui:ui:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling:1.2.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.compose.material:material:1.2.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
-    implementation("androidx.compose.material:material-icons-extended:1.2.1")
+    implementation("androidx.compose.ui:ui:1.3.1")
+    implementation("androidx.compose.ui:ui-tooling:1.3.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.3.1")
+    implementation("androidx.compose.foundation:foundation:1.3.1")
+    implementation("androidx.compose.material:material:1.3.1")
+    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.compose.material:material-icons-extended:1.3.1")
     implementation("androidx.navigation:navigation-compose:2.5.3")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("com.google.dagger:hilt-android:2.44")

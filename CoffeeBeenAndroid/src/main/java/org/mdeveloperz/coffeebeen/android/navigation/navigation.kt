@@ -5,10 +5,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import org.mdeveloperz.coffeebeen.android.screens.StartScreen
 import org.mdeveloperz.coffeebeen.android.screens.registration.*
 
 
 sealed class Screen(val name: String) {
+    object AppStartScreen : Screen("start")
     object CaptureNameScreen : Screen(name = "capture_name")
     object CaptureEmailScreen : Screen(name = "capture_email/{firstName}/{lastName}")
     object CapturePasswordScreen :
@@ -23,7 +25,7 @@ fun CoffeeBeenNavHostController(
 ) {
     NavHost(
         navController = navigationController,
-        startDestination = Screen.CaptureNameScreen.name
+        startDestination = Screen.AppStartScreen.name
     ) {
         composable(Screen.CaptureNameScreen.name) {
             UserNameScreen(navController = navigationController)
@@ -60,6 +62,10 @@ fun CoffeeBeenNavHostController(
 
         composable(Screen.OTPVerificationScreen.name) {
             VerificationCodeScreen(navigationController = navigationController)
+        }
+
+        composable(Screen.AppStartScreen.name) {
+            StartScreen(navigationController = navigationController)
         }
     }
 }

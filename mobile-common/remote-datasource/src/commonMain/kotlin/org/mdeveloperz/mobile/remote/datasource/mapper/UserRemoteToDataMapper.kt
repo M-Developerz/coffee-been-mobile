@@ -6,8 +6,8 @@ import org.mdeveloperz.mobile.remote.datasource.model.UserRemoteModel
 
 class UserRemoteToDataMapper : RemoteToDataMapper<UserRemoteModel, UserDataModel>() {
     override fun toData(remote: UserRemoteModel) = UserDataModel(
-        firstName = remote.firstName,
-        lastName = remote.lastName,
+        firstName = remote.first_name,
+        lastName = remote.last_name,
         username = remote.username,
         password = remote.password,
         id = remote.id,
