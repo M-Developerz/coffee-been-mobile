@@ -24,7 +24,7 @@ fun CoffeeBeenNavHostController(
 ) {
     NavHost(
         navController = navigationController,
-        startDestination = Screen.CaptureNameScreen.name
+        startDestination = Screen.CaptureEmailScreen.name
     ) {
         composable(Screen.CaptureNameScreen.name) {
             UserNameScreen(navController = navigationController)

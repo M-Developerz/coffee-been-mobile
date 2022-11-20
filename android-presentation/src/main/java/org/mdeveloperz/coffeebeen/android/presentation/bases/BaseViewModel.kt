@@ -19,7 +19,7 @@ sealed interface LoadingState {
 }
 
 abstract class BaseViewModel<VIEW_STATE: ViewState>: ViewModel() {
-    private val _uiViewState by lazy { MutableStateFlow<VIEW_STATE>(initializeState()) }
+    private val _uiViewState by lazy { MutableStateFlow(initializeState()) }
     val viewState: StateFlow<VIEW_STATE> = _uiViewState.asStateFlow()
 
     protected abstract fun initializeState(): VIEW_STATE

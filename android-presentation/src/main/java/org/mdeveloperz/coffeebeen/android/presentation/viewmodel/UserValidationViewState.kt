@@ -10,3 +10,5 @@ data class UserValidationViewState(
     val loadingState: LoadingState = IDL,
     val data: UserValidationPresentationResult = Empty
 ) : ViewState
+
+val EMPTY_STATE = UserValidationViewState()

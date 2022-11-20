@@ -8,7 +8,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import org.mdeveloperz.coffeebeen.android.components.TextInputField
@@ -16,13 +15,11 @@ import org.mdeveloperz.coffeebeen.android.components.TextInputFieldValue
 import org.mdeveloperz.coffeebeen.android.components.TopToolbar
 import org.mdeveloperz.coffeebeen.android.green
 import org.mdeveloperz.coffeebeen.android.navigation.Screen
-import org.mdeveloperz.coffeebeen.android.presentation.viewmodel.UserAccountCreationViewModel
 import org.mdeveloperz.coffeebeen.android.screens.registration.widgets.RegistrationHeader
 
 @Composable
 fun UserNameScreen(
-    navController: NavHostController,
-    viewModel: UserAccountCreationViewModel = hiltViewModel()
+    navController: NavHostController
 ) {
     var firstName by remember {
         mutableStateOf(
